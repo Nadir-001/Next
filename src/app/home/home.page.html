@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-tabs>
+   <ion-tab-bar slot="bottom"color="light"*ngIf="tabBarIsShown">
+     <ion-tab-button  class="msgTab tab"tab="messages">
+       <div class="badge"*ngIf="!isMessagesPage && unreadMessagesNumber!=0">{{unreadMessagesNumber}}</div>
+       <ion-icon name="chatbubbles"></ion-icon>
+       <!-- Discover -->
+     </ion-tab-button>
+    <ion-tab-button  class="tab"tab="notifications">
+      <ion-icon name="notifications"></ion-icon>
+      <!-- Discover -->
+    </ion-tab-button>
+
+
+   </ion-tab-bar>
+
+   <button class="fabButton" (click)="navigateToFeed()"*ngIf="tabBarIsShown">
+     <ion-icon name="home"></ion-icon>
+   </button>
+
+ </ion-tabs>
+ </ion-content>
+
